@@ -1,7 +1,7 @@
 import {
   FaGithub,
   FaLinkedin,
-//   FaTwitter,
+  //   FaTwitter,
   FaStackOverflow,
 } from "react-icons/fa";
 import { FiFigma } from "react-icons/fi";
@@ -46,10 +46,12 @@ const socials = [
     icon: <SiNotion />,
   },
 ];
-
-export const HeaderSocials = () => {
+type HeaderSocials = {
+  className?: string;
+};
+export const HeaderSocials = ({ className }: HeaderSocials) => {
   return (
-    <div className="flex gap-3">
+    <div className={`flex gap-3 ${className}`}>
       {socials.map((social, index) => (
         <div key={index}>{social.icon}</div>
       ))}
